@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
-import Origam from "../origami/index";
+import Origami from "../origami/index";
 
 class Origamis extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Origamis extends Component {
   renderOrigamis() {
     const { origamis } = this.state;
     return origamis.map((ori) => {
-      return <Origam key={ori.id} {...ori} />;
+      return <Origami key={ori.id} {...ori} />;
     });
   }
 
