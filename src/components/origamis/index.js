@@ -11,7 +11,7 @@ class Origamis extends Component {
   }
 
   getOrigamis = async () => {
-    const promise = await fetch("http://localhost:5000/posts");
+    const promise = await fetch("http://localhost:3000/posts");
     const origamis = await promise.json();
     this.setState({
       origamis
@@ -24,8 +24,9 @@ class Origamis extends Component {
 
   renderOrigamis() {
     const { origamis } = this.state;
-    return origamis.map((ori) => {
-      return <Origami key={ori.id} {...ori} />;
+
+    return origamis.map((ori, index) => {
+      return <Origami key={ori.id} index={index} {...ori} />;
     });
   }
 
