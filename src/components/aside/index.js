@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "../link";
+import LinkComponent from "../link";
 import style from "./index.module.css";
 import getNavigation from "../../utils/navigation";
 
@@ -8,8 +8,8 @@ const Aside = () => {
 
   return (
     <aside className={style.aside}>
-      {links.map((nav) => {
-        return <Link href={nav.link} title={nav.title} type="aside" />;
+      {links.map((nav, index) => {
+        return <LinkComponent href={nav.link} title={nav.title} type="aside" key={'a'+index} />;
       })}
     </aside>
   );
